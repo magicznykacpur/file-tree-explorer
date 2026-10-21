@@ -1,0 +1,50 @@
+{
+  "name": "root",
+  "type": "folder",
+  "children": [
+    {
+      "name": "src",
+      "type": "folder",
+      "children": [
+        { "name": "index.ts", "type": "file", "size": 1024 },
+        { "name": "App.tsx", "type": "file", "size": 2380 },
+        {
+          "name": "components",
+          "type": "folder",
+          "children": [
+            { "name": "Button.tsx", "type": "file", "size": 512 },
+            { "name": "Modal.tsx", "type": "file", "size": 3420 },
+            {
+              "name": "forms",
+              "type": "folder",
+              "children": [
+                { "name": "Input.tsx", "type": "file", "size": 870 },
+                { "name": "Select.tsx", "type": "file", "size": 1540 },
+                { "name": "Button.test.tsx", "type": "file", "size": 640 }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "utils",
+          "type": "folder",
+          "children": [
+            { "name": "format.ts", "type": "file", "size": 410 },
+            { "name": "api client.ts", "type": "file", "size": 1980 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public",
+      "type": "folder",
+      "children": [
+        { "name": "logo.png", "type": "file", "size": 48213 },
+        { "name": "hero video.mp4", "type": "file", "size": 15728640 }
+      ]
+    },
+    { "name": "empty", "type": "folder", "children": [] },
+    { "name": "package.json", "type": "file", "size": 300 },
+    { "name": "README.md", "type": "file", "size": 0 }
+  ]
+}
