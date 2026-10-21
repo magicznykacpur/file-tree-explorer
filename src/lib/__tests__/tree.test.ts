@@ -26,6 +26,7 @@ describe('parseTree', () => {
   test.each([
     ['not json', 'Invalid JSON'],
     ['[]', 'missing name'],
+    ['{"name":"a","type":"file","size":1}', 'root: must be a folder'],
     ['{"name":"a","type":"link"}', 'type must be'],
     ['{"name":"a","type":"file"}', 'invalid size'],
     ['{"name":"a","type":"folder"}', 'folder needs children'],

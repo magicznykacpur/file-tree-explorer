@@ -4,7 +4,7 @@ export type TreeNode = FileNode | FolderNode
 
 export type SearchResult = { path: string; node: TreeNode }
 
-export function parseTree(json: string): TreeNode {
+export function parseTree(json: string): FolderNode {
   let data: unknown
   try {
     data = JSON.parse(json)
@@ -12,6 +12,7 @@ export function parseTree(json: string): TreeNode {
     throw new Error('Invalid JSON')
   }
   validateNode(data, 'root')
+  if (data.type !== 'folder') throw new Error('root: must be a folder')
   return data
 }
 
