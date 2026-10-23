@@ -36,11 +36,9 @@ function TreeItem({ node, path }: { node: TreeNode; path: string }) {
         </Link>
       </div>
       {node.type === 'folder' && isOpen && (
-        <ul className="ml-3 border-l border-zinc-800 pl-2">
-          {foldersFirst(node.children).map((child) => (
-            <TreeItem key={child.name} node={child} path={joinPath(path, child.name)} />
-          ))}
-        </ul>
+        <div className="ml-3 border-l border-zinc-800 pl-2">
+          <TreeView folder={node} path={path} />
+        </div>
       )}
     </li>
   )

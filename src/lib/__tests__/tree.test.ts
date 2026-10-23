@@ -58,8 +58,8 @@ test('subtreeSize sums all files below', () => {
 })
 
 test('searchTree matches names case-insensitively with full paths', () => {
-  expect(searchTree(tree, 'BUTTON').map((r) => r.path)).toEqual(['src/components/Button.tsx'])
-  expect(searchTree(tree, 's').map((r) => r.path)).toEqual([
+  expect(searchTree(tree, 'BUTTON')).toEqual(['src/components/Button.tsx'])
+  expect(searchTree(tree, 's')).toEqual([
     'src',
     'src/index.ts',
     'src/components',

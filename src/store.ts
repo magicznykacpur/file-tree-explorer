@@ -5,7 +5,7 @@ import type { FolderNode } from './lib/tree'
 type TreeStore = {
   tree: FolderNode | null
   expanded: string[]
-  setTree: (tree: FolderNode | null) => void
+  setTree: (tree: FolderNode) => void
   toggle: (path: string) => void
 }
 

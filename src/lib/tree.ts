@@ -2,8 +2,6 @@ export type FileNode = { name: string; type: 'file'; size: number }
 export type FolderNode = { name: string; type: 'folder'; children: TreeNode[] }
 export type TreeNode = FileNode | FolderNode
 
-export type SearchResult = { path: string; node: TreeNode }
-
 export function parseTree(json: string): FolderNode {
   let data: unknown
   try {
@@ -52,13 +50,13 @@ export function subtreeSize(node: TreeNode): number {
   return node.children.reduce((sum, child) => sum + subtreeSize(child), 0)
 }
 
-export function searchTree(root: TreeNode, query: string): SearchResult[] {
+export function searchTree(root: TreeNode, query: string): string[] {
   const needle = query.trim().toLowerCase()
   if (!needle) return []
 
-  const results: SearchResult[] = []
+  const results: string[] = []
   const walk = (node: TreeNode, path: string) => {
-    if (path && node.name.toLowerCase().includes(needle)) results.push({ path, node })
+    if (path && node.name.toLowerCase().includes(needle)) results.push(path)
     if (node.type === 'folder') node.children.forEach((child) => walk(child, joinPath(path, child.name)))
   }
   walk(root, '')

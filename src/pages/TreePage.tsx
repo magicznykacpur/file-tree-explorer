@@ -23,7 +23,7 @@ export default function TreePage() {
       {query.trim() ? (
         <ul className="space-y-1 rounded-xl border border-zinc-800 bg-zinc-900/70 p-4 shadow-lg shadow-black/30">
           {results.length === 0 && <li className="text-zinc-500">No results</li>}
-          {results.map(({ path }) => (
+          {results.map((path) => (
             <li key={path}>
               <Link to={nodeUrl(path)} className="font-mono text-sm text-cyan-400 hover:text-cyan-300 hover:underline">
                 {tree.name}/{path}
